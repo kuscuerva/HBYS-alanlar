@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaCare Digital Health</title>
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<rect width='100' height='100' rx='22' fill='%23d62828'/>
+<path d='M42 20H58V42H80V58H58V80H42V58H20V42H42Z' fill='white'/>
+</svg>">
+
+</head>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff5f5;
+    color:#7a0202;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:22px 70px;
+
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:800;
+    color:#d62828;
+    letter-spacing:1px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    margin-left:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d62828;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+
+    padding:120px 70px 60px;
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        #7f0000,
+        #b71c1c,
+        #ff4d6d
+    );
+}
+
+    color:dark red;
+}
+
+.hero-text h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.9;
+    margin-bottom:40px;
+    color:#a3262c;
+}
+
+.btn{
+    display:inline-block;
+    padding:17px 42px;
+    background:white;
+    color:#b71c1c;
+
+    text-decoration:none;
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#ffe5e5;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:90%;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+/* FEATURES */
+
+.features{
+    padding:110px 70px;
+    background:white;
+}
+
+.section-title{
+    text-align:center;
+    font-size:48px;
+    color:#a4161a;
+    margin-bottom:70px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.feature-card{
+    background:#fff1f1;
+    padding:45px 35px;
+
+    border-radius:22px;
+
+    transition:.4s;
+
+    border:1px solid #dcecff;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.feature-card h3{
+    margin-bottom:18px;
+    color:#d62828;
+    font-size:24px;
+}
+
+.feature-card p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* ABOUT */
+
+.about{
+    padding:120px 70px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:25px;
+}
+
+.about-text h2{
+    font-size:50px;
+    margin-bottom:25px;
+    color:#961e1e;
+}
+
+.about-text p{
+    line-height:2;
+    color:#555;
+    margin-bottom:35px;
+}
+
+/* STATS */
+
+.stats{
+    padding:100px 70px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7f0000,
+        #b71c1c
+    );
+
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.08);
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.stat-box h2{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#dcecff;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:120px 70px;
+    background:white;
+}
+
+.contact-container{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+    padding:18px;
+    margin-bottom:20px;
+
+    border:1px solid #dbe7f5;
+    border-radius:14px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus{
+    border-color:#bd1324;
+    box-shadow:0 0 0 4px rgba(21,101,192,.12);
+}
+
+.contact button{
+    padding:18px;
+    border:none;
+
+    background:#c4141a;
+    color:white;
+
+    border-radius:14px;
+
+    font-size:17px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.contact button:hover{
+    background:#ab0e16;
+}
+
+/* FOOTER */
+
+footer{
+    background:#38070e;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+footer p{
+    margin:5px 0;
+    color:#bd9b9b;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    header{
+        padding:20px;
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:140px 20px 60px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero-image{
+        margin-top:40px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        padding:100px 20px;
+    }
+
+    .features,
+    .stats,
+    .contact{
+        padding:100px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+    <span class="logo-icon">✚</span>
+    NovaCare
+</div>
+
+<nav>
+    <a href="#home">Ana Sayfa</a>
+    <a href="#features">Hizmetler</a>
+    <a href="#about">Hakkımızda</a>
+    <a href="#stats">Veriler</a>
+    <a href="#contact">İletişim</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>
+Akıllı Sağlık
+Teknolojileri
+</h1>
+
+<p>
+Dijital sağlık altyapıları, yapay zeka çözümleri ve modern hastane sistemleri ile sağlık sektörünü yeniden tasarlıyoruz.
+</p>
+
+<a href="#features" class="btn">
+Çözümleri Gör
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+<h2 class="section-title">
+Uzmanlık Alanlarımız
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>HBYS Sistemleri</h3>
+<p>Yeni nesil hastane bilgi yönetim platformları.</p>
+</div>
+<a href="https://chat.openai.com/" class="feature-card" target="_blank">
+<div class="feature-card">
+<h3>AI Destekli Analiz</h3>
+<p>
+Yapay zeka ile sağlık verisi analitiği çözümleri.
+</p>
+</div>
+</a>
+
+<div class="feature-card">
+<h3>PACS & DICOM</h3>
+<p>
+Tıbbi görüntüleme ve arşiv yönetim altyapıları.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Mobil Sağlık</h3>
+<p>
+Doktor ve hasta uygulamaları için mobil çözümler.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Bulut Altyapıları</h3>
+<p>
+Güvenli ve ölçeklenebilir cloud sağlık sistemleri.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>e-Reçete Sistemleri</h3>
+<p>
+Ulusal reçete entegrasyonu ve dijital ilaç yönetimi.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2>
+Sağlıkta Dijital
+Dönüşüm Lideri
+</h2>
+
+<p>
+NovaCare, modern sağlık kuruluşları için yenilikçi bilişim çözümleri geliştirir. Güvenli veri yönetimi, yapay zeka destekli sistemler ve güçlü altyapılar ile sağlık süreçlerini hızlandırır.
+</p>
+
+<a href="#" class="btn">
+Daha Fazla Bilgi
+</a>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats" id="stats">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h2>180M+</h2>
+<p>Hasta Kaydı</p>
+</div>
+
+<div class="stat-box">
+<h2>400M+</h2>
+<p>İşlem Hacmi</p>
+</div>
+
+<div class="stat-box">
+<h2>92K+</h2>
+<p>Sağlık Merkezi</p>
+</div>
+
+<div class="stat-box">
+<h2>84M+</h2>
+<p>Aktif Kullanıcı</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="contact-container">
+
+<h2 class="section-title">
+İletişime Geçin
+</h2>
+
+<form>
+
+<input type="text" placeholder="Ad Soyad">
+
+<input type="email" placeholder="E-Posta">
+
+<textarea rows="6" placeholder="Mesajınız"></textarea>
+
+<button type="submit">
+Mesaj Gönder
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 NovaCare Digital Health</p>
+<p>Next Generation Healthcare Technologies</p>
+
+</footer>
+
+</body>
+</html>
